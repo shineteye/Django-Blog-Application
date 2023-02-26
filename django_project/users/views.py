@@ -33,6 +33,6 @@ def profile(request):
     context = {
         'u_update_form': u_update_form,
         'p_update_form': p_update_form
-    }
-    
+    } 
+
     return render(request,'users/profile.html', context)
