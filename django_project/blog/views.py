@@ -21,7 +21,14 @@ class PostListView(ListView):
     template_name = 'blog/home.html'
     context_object_name = 'posts' #taking the contexts from the 
     ordering = ['-date_Posted'] #this changes the ordering of the posts (the lists being displayed) in our blog 
-
+    paginate_by = 5 #this puts only two items on the page
+    
+class UserPostListView(ListView):
+    model = Post
+    template_name = 'blog/user_posts.html'
+    context_object_name = 'posts' #taking the contexts from the 
+    ordering = ['-date_Posted'] #this changes the ordering of the posts (the lists being displayed) in our blog 
+    paginate_by = 5 #this puts only two items on the page
 
 class PostDetailView(DetailView):
     model = Post
